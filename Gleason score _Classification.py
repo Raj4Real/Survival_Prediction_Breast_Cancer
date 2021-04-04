@@ -49,7 +49,7 @@ fit = test.fit(X1, Y)
 
 # STORE THE SELECTED FEATURES IN X 
 X = fit.transform(X1)
-"""
+
 #CLASSIFICATION
 # 1.NAIVE BAYES METHOD
 clf = GaussianNB()
@@ -68,8 +68,7 @@ print("\nNumber of mislabeled points out of a total %d points: %d"  % (X.shape[0
 kf = KFold(n_splits=10,shuffle = True)
 
 
-# CREATE FUNCTION FOR CONFUSE MATRIX
-# FOR 5*5 MATIRX, 25 FUNCTIONS ARE CREATED
+# Functions for confusion matrix (5x5)
 
 #################      4    #############
 def w1_w1(y_true, y_pred,n,a):
@@ -260,7 +259,7 @@ def w5_w5(y_true, y_pred,n,a):
     return count
 
 
-#INITIALIZE 25 ARRAYS TO STORE CONFUSE MATRIX CELL VALUES
+#Storing confusion matrix cells
 W1W1 =[]
 W1W2 =[]
 W1W3 =[]
@@ -291,7 +290,7 @@ W5W3 =[]
 W5W4 =[]
 W5W5 =[]
 
-# INITIALIZE THE FINAL CONFUSE MATRIX
+# storing final matrix
 FinalConfuseMatrix = np.empty([5,5])
 
 
@@ -733,6 +732,3 @@ FinalConfuseMatrix[4][4] = np.sum(W5W5)
                   
 print("\nFinal Confuse Matrix of Random Forest\n",FinalConfuseMatrix)
 
-# END 
-
-"""
